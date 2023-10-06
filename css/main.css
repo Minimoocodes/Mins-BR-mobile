@@ -1,0 +1,334 @@
+@import './reset.css';
+@import './global.css';
+
+/* announcement */
+.announcement {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding-block: 0.5rem;
+}
+
+.announcement a {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+/* navigation menu */
+.nav__bar {
+    background-color: var(--color-transparent90);
+    margin-bottom: 2rem;
+}
+
+.nav__wrapper {
+    position: relative;
+    padding: 1rem;
+}
+
+.site__logo {
+    width: 4rem;
+    height: 4rem;
+}
+
+.hamburger__checkbox {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 1.7rem;
+    right: 2rem;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.hamburger__icon {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 1.7rem;
+    right: 2rem;
+    z-index:1;
+}
+
+.nav__menu {
+    visibility: hidden;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 1s;
+    transform: scaleX(0);
+    transform-origin: top right;
+}
+
+.hamburger__checkbox:checked ~ .nav__menu {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+@media (min-width: 48rem) {
+    .hamburger__icon {
+        display: none;
+    }
+
+    .nav__menu {
+        position: static;
+        flex-direction: row;
+        visibility: visible;
+        transform: scaleY(1);
+        transition: none;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+}
+.nav__menu a {
+    color: white;
+}
+
+.nav__menu a:hover {
+    border-bottom: 1px solid white;
+}
+
+
+/* layout */
+.content__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 48rem) {
+    .content__wrapper {
+        grid-template-columns: 3fr 1fr;
+    }
+    .content__music {
+        grid-row: 1/ span 4;
+        grid-column: 2;
+    }
+}
+
+@media (min-width: 63rem) {
+    .content__wrapper {
+        grid-template-columns: 2fr 2fr 1fr;
+    }
+
+    .content__music {
+        grid-row: 1/ span 4;
+        grid-column: 3;
+    }
+
+    .content__flavours,
+    .content__media,
+    .content__stories {
+        grid-column: span 2;
+    }
+}
+
+/* content */
+/* content__banner */
+.banner_gif {
+    display : block;
+    width : 20rem;
+    max-width: 100%;
+    margin : 2rem auto;
+    border-radius: 1rem;
+}
+
+.banner_survey {
+    margin: 2rem auto;
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.banner_survey_input {
+    padding : 0.5rem 1rem;
+    color : var(--color-primary);
+    border : 1px solid var(--color-primary);
+    border-radius : 0.5rem;
+    margin-top : 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.banner_survey_button{
+    padding : 0.5rem 1rem;
+    background-color: var(--color-transparent90);
+    border: 0;
+    border-radius : 0.5rem;
+}
+
+/* content__favorites */
+.content__favorites {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    scroll-snap-align: start;    
+    position: relative;
+}
+
+.carousel__icon {
+    width: 1rem;
+    height: auto;
+    position: absolute;
+}
+
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
+.favorites__image {
+    display: block;
+    width: 15rem;
+    height: auto;
+}
+
+.favorites__item {
+    text-align: center;
+    transition: right 1s linear;
+}
+
+@media (min-width: 48rem) {
+    .favorites__item {
+        display: flex;
+        align-items: center;
+        max-width: 100%; /* Would like it to stretch out so I can make a image carousel*/
+    }
+    .favorites__text {
+        width: 10rem;
+    }
+
+    .favorites__text h6 {
+        font-size: 1rem;
+    }
+}
+
+/* content__flavours */
+.content__flavours {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (min-width: 48rem) and (max-width: 63rem) {
+    .content__flavours {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.flavours__items {
+    font-size: 0.8rem;
+    text-align: center;
+
+}
+.flavours__image {
+    display: block;
+    margin: 0 auto;
+    width: 5rem;
+    height: auto;
+
+}
+
+
+/* content__media */
+.content__media {
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.media__video {
+    display: block;
+    margin: 0 auto;
+}
+
+/* content__stories */
+.content__stories {
+    padding-inline: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.stories__year {
+    color: var(--color-primary)
+}
+
+/* content__music */
+.content__music {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+
+/* icecream slider */
+
+@media (min-width: 48rem) {
+    .content__music {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        translate: -100%;
+    }
+    100% {
+        translate: 0;
+    }
+}
+
+.slider {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 2rem; 
+    position: relative;
+    
+}
+
+
+
+/* .slider::before,
+.slider::after {
+    content:'';
+    position: absolute;
+    width: 5rem;
+    height: 100%;
+    z-index: 1;
+}
+
+.slider::before {
+    background: linear-gradient(90deg, #fbf7ef00, #fbf7ef00);
+}
+.slider::after {
+    background: linear-gradient(-90deg,#fbf7ef00, #fbf7ef00);
+    right: 0;
+} */
+
+.slider_item {
+    width: 6rem;
+    height: auto;
+    display: block;
+    animation: slideIn 3s linear infinite;
+}
+
+.footer {
+    background-color: var(--color-transparent90);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}

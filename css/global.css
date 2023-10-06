@@ -1,0 +1,33 @@
+:root {
+    --color-primary:#dc88bb;
+    --color-transparent90:#dc88bb90;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url('./images/sprinkles\ background.avif');
+    font-family: 'Glegoo', serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.box {
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.box:last-child {
+    border-bottom: 0;
+}
+
+.nav__wrapper,
+.content__wrapper {
+    max-width: 77rem;
+    margin: 0 auto;
+}
+
