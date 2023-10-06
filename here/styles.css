@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+}
+
+:root {
+    --color-primary:#dc88bb;
+    --color-transparent90:#dc88bb90;
+}
+
+body {
+    background-image: url('./images/sprinkles\ background.avif');
+    font-family: 'Glegoo', serif;
+}
+
+.banner {
+    display: flex;
+    margin:20rem auto;
+
+}
+
+.flavours {
+    background-color: var(--color-transparent90);
+    width: 60rem;
+    padding: 2rem;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.ideas__submit {
+    width: 20rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.ideas__input {
+    padding : 0.5rem 1rem;
+    color : var(--color-primary);
+    border : 1px solid var(--color-primary);
+    border-radius : 0.5rem;
+    margin-top : 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.ideas__button {
+    padding : 0.5rem 1rem;
+    background-color: var(--color-primary);
+    border: 0;
+    border-radius : 0.5rem;
+}
+
+.small {
+    font-size: 0.7rem;
+    text-align: justify;
+}

@@ -7,6 +7,9 @@
     color: #fff;
     text-align: center;
     padding-block: 0.5rem;
+    position: sticky; /* why does it disappear when the header's finished?*/
+    top: 0;
+    z-index: 2;
 }
 
 .announcement a {
@@ -66,6 +69,7 @@
     transition: all 1s;
     transform: scaleX(0);
     transform-origin: top right;
+    font-weight: bold;
 }
 
 .hamburger__checkbox:checked ~ .nav__menu {
@@ -91,10 +95,26 @@
 }
 .nav__menu a {
     color: white;
+    position: relative;
 }
 
-.nav__menu a:hover {
-    border-bottom: 1px solid white;
+.nav__menu a::before {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform:scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.nav__menu a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 
@@ -263,6 +283,10 @@
     color: var(--color-primary)
 }
 
+.stories__year:hover {
+    transform: translateX(3rem);
+}
+
 /* content__music */
 .content__music {
     display: grid;
@@ -280,6 +304,8 @@
     .content__music {
         display: flex;
         flex-direction: column;
+        /* position: sticky;
+        top: 20rem; */
     }
 }
 
