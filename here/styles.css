@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Glegoo', serif;
 }
 
 img {
@@ -15,18 +16,45 @@ img {
 
 body {
     background-image: url('./images/sprinkles\ background.avif');
-    font-family: 'Glegoo', serif;
+    background-repeat: repeat-y;
+    animation: slidein 100s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;              
 }
+
+
+@keyframes slidein {
+    from {
+        background-position: top; 
+        background-size:100%; 
+    }
+    to {
+        background-position: bottom;
+        background-size:200%;}
+}
+
+
+
 
 .banner {
     display: flex;
-    margin:20rem auto;
-
+    align-items: center;
+    padding: 8rem;
+    translate: -5%;    
+    position: absolute;
 }
 
-.flavours {
+.banner__image {
+    display: block;
+    flex: 1;
+    flex-shrink: 0;
+    max-width: 100%; /*how do I make the image not span or shrink?*/
+}
+
+.banner__text {
+    flex: 1;
     background-color: var(--color-transparent90);
-    width: 60rem;
     padding: 2rem;
     border-radius: 30px;
     text-align: center;
@@ -41,7 +69,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 
 
 .ideas__input {
