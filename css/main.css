@@ -61,7 +61,7 @@
 .nav__menu {
     visibility: hidden;
     width: 80%;
-    height: 100vh;
+    height: 30vh;
     background-color: var(--color-primary);
     display: flex;
     flex-direction: column;
@@ -199,6 +199,7 @@
 .content__favorites {
     position: relative;
     display: flex;
+    align-items: center;
 }
 
 .carousel__slider {
