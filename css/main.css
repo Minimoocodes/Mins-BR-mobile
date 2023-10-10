@@ -2,14 +2,14 @@
 @import './global.css';
 
 /* announcement */
-/* How do I make the position fixed and push down the body? */
+
 
 .announcement {
     background-color: #222;
     color: #fff;
     text-align: center;
-    padding-block: 0.5rem;
-    position: sticky; /* why does it disappear when the header's finished?*/
+    padding: 0.5rem;
+    position: sticky; 
     top: 0;
     z-index: 5;
 }
@@ -23,7 +23,6 @@
 .nav__bar {
     background-color: var(--color-transparent90);
     margin-bottom: 2rem;
-
 }
 
 .nav__wrapper {
@@ -100,6 +99,7 @@
         justify-content: flex-end;
     }
 }
+
 .nav__menu a {
     color: white;
     position: relative;
@@ -123,7 +123,6 @@
     transform-origin: left;
     transform: scaleX(1);
 }
-
 
 /* layout */
 .content__wrapper {
@@ -162,7 +161,7 @@
 
 /* content */
 /* content__banner */
-.banner_gif {
+.banner__gif {
     display : block;
     width : 20rem;
     max-width: 100%;
@@ -170,16 +169,15 @@
     border-radius: 1rem;
 }
 
-.banner_survey {
+.banner__survey {
     margin: 2rem auto;
     max-width: 20rem;
     display: flex;
     flex-direction: column;
     text-align: center;
-    
 }
 
-.banner_survey_input {
+.banner__survey__input {
     padding : 0.5rem 1rem;
     color : var(--color-primary);
     border : 1px solid var(--color-primary);
@@ -188,7 +186,8 @@
     margin-bottom: 0.5rem;
     text-align: center;
 }
-.banner_survey_button{
+
+.banner__survey__button{
     padding : 0.5rem 1rem;
     background-color: var(--color-transparent90);
     border: 0;
@@ -232,6 +231,7 @@
 .carousel__nav-link:hover {
     background-color: #222;
 }
+
 .favorites__item {
     text-align: center;
     width: 100%;
@@ -256,7 +256,6 @@
         display: flex;
         align-items: center;
     }
-
 }
 
 /* content__flavours */
@@ -304,7 +303,6 @@
     display: block;
     margin: 0 auto;
     max-width: 90%;
-    height: 100%;
 }
 
 /* content__stories */
@@ -327,7 +325,6 @@
     .box:nth-child(5) {
         border-bottom: 0;
     }
-    
 }
 
 /* content__music */
@@ -335,22 +332,23 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    max-width: 100%;
     margin-inline: auto;
     margin-bottom: 2rem;
 }
-
-/* icecream slider */
 
 @media (min-width: 48rem) {
     .content__music {
         display: flex;
         flex-direction: column;
-        /* position: sticky;
-        top: 15rem; */
     }
 }
 
+.music__items {
+    max-width: 15rem;
+    flex-shrink: 0;
+}
+
+/* icecream slider */
 @keyframes slideIn {
     0% {
         translate: -100%;
