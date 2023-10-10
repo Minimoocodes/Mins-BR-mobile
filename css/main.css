@@ -360,17 +360,41 @@
 
 .slider {
     display: flex;
-    gap: 4rem;
     margin-bottom: 2rem; 
-    position: relative;
+    gap: 4rem;
     overflow: hidden;
+    position: relative;
+}
+
+.slider::before,
+.slider::after {
+    content:"";
+    position: absolute;
+    width: 5rem;
+    height: 100%;
+    z-index: 5;
+}
+
+.slider::before {
+    background: linear-gradient(90deg, #fff, #fbf7ef00);
+    left: 0;
+}
+
+.slider::after {
+    background: linear-gradient(-90deg, #fff, #fbf7ef00);
+    right: 0;
+}
+
+.slider__content {
+    display: flex;
+    gap: 4rem;
+    animation: slideIn 40s linear infinite;
 }
 
 .slider_item {
     width: 6rem;
     height: auto;
     display: block;
-    animation: slideIn 3s linear infinite;
 }
 
 .footer {
