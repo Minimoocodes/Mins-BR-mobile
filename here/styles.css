@@ -1,3 +1,4 @@
+/* reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,46 +15,53 @@ img {
     --color-transparent90:#dc88bb90;
 }
 
+/* components */
 body {
     background-image: url('./images/sprinkles\ background.avif');
-    background-repeat: repeat-y;
-    animation: slidein 100s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;              
+    background-repeat: repeat;
+    height: 100vh;
+    animation: bgScroll 20s;
 }
 
-
-@keyframes slidein {
+@keyframes bgScroll {
     from {
-        background-position: top; 
-        background-size:100%; 
+        background-position: top;
     }
     to {
         background-position: bottom;
-        background-size:200%;}
+    }
 }
 
 
-
-
+.banner__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .banner {
     display: flex;
     align-items: center;
-    padding: 8rem;
-    translate: -5%;    
+    padding: 8rem; 
+    position: relative
+}
+
+.banner__tohome {
+    width: 2rem;
     position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
 }
 
 .banner__image {
-    display: block;
-    flex: 1;
-    flex-shrink: 0;
-    max-width: 100%; /*how do I make the image not span or shrink?*/
+    max-width: 100%; 
+}
+
+.banner__image:hover {
+    rotate: 45deg;
 }
 
 .banner__text {
-    flex: 1;
     background-color: var(--color-transparent90);
     padding: 2rem;
     border-radius: 30px;
@@ -62,16 +70,17 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    max-width: 30rem;
 }
-.ideas__submit {
+
+.banner__submit {
     width: 20rem;
     max-width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-
-.ideas__input {
+.banner__input {
     padding : 0.5rem 1rem;
     color : var(--color-primary);
     border : 1px solid var(--color-primary);
@@ -80,14 +89,14 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.ideas__button {
+.banner__button {
     padding : 0.5rem 1rem;
     background-color: var(--color-primary);
     border: 0;
     border-radius : 0.5rem;
 }
 
-.small {
+.banner__small {
     font-size: 0.7rem;
     text-align: justify;
 }
